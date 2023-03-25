@@ -1,0 +1,21 @@
+version: '3'
+
+services: 
+  api:
+    build: .
+    ports: 
+      - "$PORT:8000"
+    env_file:
+      - .env
+    depends_on:
+      - broker
+  broker:
+    image: rabbitmq
+    hostname: analysis-broker
+    ports: 
+      - "5672:5672"
+      - "8080:8080"
+    env_file:
+      - .env
+
+
