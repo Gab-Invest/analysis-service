@@ -1,9 +1,6 @@
 """Provides the necessary methods to bootstrap a server"""
 from fastapi import FastAPI
+from src.routes import router
 
-app = FastAPI()
 
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+app = FastAPI(routes=router.routes)

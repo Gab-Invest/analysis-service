@@ -4,4 +4,3 @@ pandas
 nltk
 snscrape
 pylint
-pytest

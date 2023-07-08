@@ -9,6 +9,8 @@ services:
       - .env
     depends_on:
       - broker
+    volumes:
+      - .:/app
   broker:
     image: rabbitmq
     hostname: analysis-broker
